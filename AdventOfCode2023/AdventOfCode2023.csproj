@@ -11,10 +11,12 @@
     <None Remove="Common\" />
     <None Remove="Day1\" />
     <None Remove="Day1\Input1.txt" />
+    <None Remove="Day2\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\" />
     <Folder Include="Day1\" />
+    <Folder Include="Day2\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ReadLine" Version="2.0.1" />

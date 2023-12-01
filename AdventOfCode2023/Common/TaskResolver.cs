@@ -11,13 +11,15 @@
         /// </summary>
         /// <param name="taskNumber"></param>
         /// <returns></returns>
-        public static IAdventOfCodeTask ResolveTask(string taskNumber)
+        public static IAdventOfCodeTask? ResolveTask(string taskNumber)
         {
             var splits = taskNumber.Split('.');
             var taskDay = splits[0];
             var task = splits[1];
             var fullClassName = $"AdventOfCode2023.Day{taskDay}.Task{task}";
             var objectType = Type.GetType(fullClassName);
+            if(objectType == null)
+                return null;
             return Activator.CreateInstance(objectType) as IAdventOfCodeTask;
         }
     }
