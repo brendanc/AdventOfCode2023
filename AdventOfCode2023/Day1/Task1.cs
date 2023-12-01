@@ -29,7 +29,7 @@ namespace AdventOfCode2023.Day1
         public int GetCalibrationValue(string inputLine)
         {
             var first = GetFirstNumber(inputLine);
-            var reverse = ReverseString(inputLine);
+            var reverse = inputLine.Reverse();
             var second = GetFirstNumber(reverse);
             var value = first.ToString() + second.ToString();
             return int.Parse(value);

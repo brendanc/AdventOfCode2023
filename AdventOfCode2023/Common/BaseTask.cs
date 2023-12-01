@@ -30,12 +30,6 @@ namespace AdventOfCode2023.Common
             return InputReader.ReadInput(InputFileName);
         }
 
-        public static string ReverseString(string s)
-        {
-            char[] charArray = s.ToCharArray();
-            Array.Reverse(charArray);
-            return new string(charArray);
-        }
     }
 }
 
