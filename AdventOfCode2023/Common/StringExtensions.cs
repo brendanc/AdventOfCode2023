@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text.RegularExpressions;
+
 namespace AdventOfCode2023.Common
 {
 	public static class StringExtensions
@@ -31,6 +33,28 @@ namespace AdventOfCode2023.Common
             char[] charArray = s.ToCharArray();
             Array.Reverse(charArray);
             return new string(charArray);
+        }
+
+        /// <summary>
+        /// Split a mutli-line string into a collection of strings
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static IEnumerable<string>SplitToLines(this string text)
+        {
+            return text.Split(new[] { '\r', '\n' });
+        }
+
+
+        /// <summary>
+        /// Extracts a number from text - eg "blue 5" will return 5
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static int ExtractNumberFromText(this string text)
+        {
+            var s = Regex.Match(text, @"\d+").Value;
+            return int.Parse(s);
         }
     }
 }
